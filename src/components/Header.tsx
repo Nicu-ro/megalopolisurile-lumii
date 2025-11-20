@@ -22,7 +22,7 @@ export default function Header({ title }: HeaderProps) {
             <h1 className="header-title">{title}</h1>
 
             <div className="info-text">
-                <span>Liceul: „Traian Vuia” Craiova</span>
+                <span>Liceul "Traian Vuia" Craiova</span>
                 <span>Clasa: XI-C</span>
                 <span>Specializarea: Matematica-Informatica</span>
                 <span>Profesor: Toma Denisa, Țenea Elena</span>
