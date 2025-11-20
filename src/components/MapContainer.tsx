@@ -39,7 +39,7 @@ const MapContainer: React.FC = () => {
                 zoom={3}
                 center={{ lat: 44.4268, lng: 26.1025 }}
                 mapContainerStyle={{
-                    height: "calc(100dvh - 60px - -15px - 40px)",
+                    height: "calc(100dvh - 60px - 124px - 40px)",
                     width: "100%",
                 }}
                 options={{
@@ -48,7 +48,7 @@ const MapContainer: React.FC = () => {
                     zoomControl: true,
                     fullscreenControl: false,
                     streetViewControl: true,
-                    mapTypeControl: false,
+                    mapTypeControl: true,
                     gestureHandling: "greedy",
                     scrollwheel: true,
                     minZoom: 2,

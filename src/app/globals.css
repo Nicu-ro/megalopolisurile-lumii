@@ -227,7 +227,7 @@ body {
 /* -------- MAP CARD -------- */
 .map-card {
     width: 90vw;
-    height: 600px;
+    height: auto;
     margin: 20px 0px;
     min-height: calc(100dvh - 60px - 124px - 40px);
     border-radius: 12px;
@@ -301,7 +301,7 @@ body {
     }
 }
 
-@media (max-width: 931px) {
+@media (max-width: 1071px) {
     .site-header {
         align-items: center;
         text-align: center;
@@ -323,12 +323,13 @@ body {
     }
 }
 
-@media (max-width: 631px) {
+@media (max-width: 776px) {
     .header-title {
         font-size: 1.5rem;
         position: absolute;
-        left: 150px;
-        top: 50px;
+        font-weight: 500;
+        left: 210px;
+        top: 48px;
     }
 
     .logo-image {
@@ -342,10 +343,23 @@ body {
     }
 }
 
-@media (max-width: 481px) {
+@media (max-width: 541px) {
     .header-title {
         font-size: 1rem;
-        left: 130px;
+        left: 170px;
+        top: 52px;
+    }
+
+    .logo-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+@media (max-width: 451px) {
+    .header-title {
+        font-size: 0.8rem;
+        left: 150px;
         top: 55px;
     }
 
@@ -354,23 +368,10 @@ body {
         height: 60px !important;
     }
 }
-
-@media (max-width: 391px) {
-    .header-title {
-        font-size: 0.8rem;
-        left: 115px;
-        font-weight: 500;
-    }
-
-    .logo-image {
-        width: 60px !important;
-        height: 60px !important;
-    }
-}
-@media (max-width: 345px) {
+@media (max-width: 406px) {
     .header-title {
         font-size: 0.7rem;
-        left: 110px;
+        left: 140px;
     }
     .info-text {
         font-size: 0.5rem;
