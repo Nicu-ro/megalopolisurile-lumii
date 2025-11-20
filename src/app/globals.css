@@ -162,7 +162,8 @@ body {
     justify-content: center;
     text-align: center;
     height: 40px;
-    width: 170px;
+    width: 175px;
+    min-width: 175px;
     transition: all 0.2s ease-in-out;
     background-color: #ffffff;
     font-weight: 600;
@@ -328,7 +329,7 @@ body {
         font-size: 1.5rem;
         position: absolute;
         font-weight: 500;
-        left: 210px;
+        left: 250px;
         top: 48px;
     }
 
@@ -343,10 +344,10 @@ body {
     }
 }
 
-@media (max-width: 541px) {
+@media (max-width: 551px) {
     .header-title {
         font-size: 1rem;
-        left: 170px;
+        left: 190px;
         top: 52px;
     }
 
@@ -358,9 +359,9 @@ body {
 
 @media (max-width: 451px) {
     .header-title {
-        font-size: 0.8rem;
+        font-size: 0.65rem;
         left: 150px;
-        top: 55px;
+        top: 57px;
     }
 
     .logo-image {
@@ -369,11 +370,15 @@ body {
     }
 }
 @media (max-width: 406px) {
+    .logo-image {
+        width: 50px !important;
+        height: 50px !important;
+    }
     .header-title {
         font-size: 0.7rem;
-        left: 140px;
+        left: 150px;
     }
     .info-text {
-        font-size: 0.5rem;
+        font-size: 0.45rem;
     }
 }
