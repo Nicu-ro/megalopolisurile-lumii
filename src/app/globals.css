@@ -1,0 +1,369 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira+Stencil+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira+Stencil+One&display=swap');
+@import "tailwindcss";
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+}
+html,
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* -------- GLOBAL -------- */
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #F8F9FA;
+    color: #111827;
+    scroll-behavior: smooth;
+}
+
+.site-footer {
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    color: #1E40AF;
+    text-align: center;
+    border-top: 1px solid #E5E7EB;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.site-footer a{
+    width: 100%;
+    height: 100%;
+    color: #1E40AF;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* -------- SMOOTH SCROLLBAR -------- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #C3D3EF;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #96B2E0;
+}
+
+::-webkit-scrollbar-track {
+    background: #F1F3F5;
+}
+
+/* -------- HEADER ROOT -------- */
+.site-header {
+    width: 100%;
+    padding: 12px 24px;
+    height: 124px;
+    background: #fafafa;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+    border-bottom: 1px solid #e2e5e9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* -------- LOGO -------- */
+.logo-wrapper {
+    flex: 0 0 auto;
+}
+
+.logo-image {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.15));
+}
+
+/* -------- TITLE -------- */
+.header-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2f79b7; /* blue accent */
+    margin: 0;
+    line-height: 1.2;
+    text-align: center;
+    
+    font-family: "Saira Stencil One" !important;
+}
+
+/* -------- INFO TEXT -------- */
+.info-text {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 0.95rem;
+    color: #000000;
+    font-weight: 500;
+    text-align: right;
+}
+
+/* -------- PAGE ROOT -------- */
+.page-root {
+    min-height: 100vh;
+    background-color: #fafafa;
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------- PAGE CONTENT -------- */
+.page-content {
+    max-width: 900px;
+    width: 100%;
+    min-height: calc(100dvh - 60px - 124px - 40px);
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+/* -------- BACK BUTTON -------- */
+.back-button-container {
+    position: absolute;
+    top: 140px;
+    right: 20px;
+}
+.back-button-container button {
+    border: solid 2px #e4e4e4 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 170px;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.back-button-container button:hover {
+    background-color: #1e40af;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* -------- MARKER INFO -------- */
+.marker-info {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2f79b7;
+    background-color: #f0efef;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #d8d9da;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.164);
+    max-width: 900px;
+    margin: 20px auto;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* -------- PRESENTATION WRAPPER -------- */
+.presentation-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* -------- IFRAME -------- */
+.presentation-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+    .marker-info {
+        font-size: 1rem;
+    }
+
+    .presentation-wrapper {
+        aspect-ratio: 16/9;
+    }
+}
+.page-root {
+    min-height: 100vh;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* -------- MAP CARD -------- */
+.map-card {
+    width: 90vw;
+    height: 600px;
+    margin: 20px 0px;
+    min-height: calc(100dvh - 60px - 124px - 40px);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.356);
+    background-color: #ffffff;
+}
+
+.presentation-wrapper {
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    background-color: #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.356);
+}
+
+.iframe-skeleton {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        #e5e7eb 25%,
+        #f3f4f6 50%,
+        #e5e7eb 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.presentation-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease;
+}
+
+.presentation-iframe.hidden {
+    opacity: 0;
+}
+
+.presentation-iframe.visible {
+    opacity: 1;
+}
+
+.map-container-loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #6b7280;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+    .map-card {
+        width: 95vw;
+        height: 50vh;
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 931px) {
+    .site-header {
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        padding: 16px 16px;
+    }
+
+    .header-title {
+        font-size: 2rem;
+    }
+
+    .logo-image {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    .info-text {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 601px) {
+    .header-title {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 150px;
+        top: 50px;
+    }
+
+    .logo-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    .info-text {
+        font-size: 0.55rem;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 481px) {
+    .header-title {
+        font-size: 1rem;
+        left: 130px;
+        top: 55px;
+    }
+
+    .logo-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
+
+@media (max-width: 391px) {
+    .header-title {
+        font-size: 0.8rem;
+        left: 115px;
+        font-weight: 500;
+    }
+
+    .logo-image {
+        width: 60px !important;
+        height: 60px !important;
+    }
+}
