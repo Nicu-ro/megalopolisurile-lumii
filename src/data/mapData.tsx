@@ -90,7 +90,7 @@ const markers: CustomMarker[] = [
     },
     {
         id: 5,
-        name: "Aglomeratia Urbana Hawaiana",
+        name: "Aglomeratia Hawaiana",
         position: { lat: 21.3114, lng: -157.8651 },
         info: " FUN FACT :  Honolulu, capitala statului Hawaii, este situată pe insula Oahu și este cunoscută pentru plajele sale frumoase, cum ar fi Waikiki, și pentru cultura sa polineziană vibrantă. Deși Hawaii este cel mai izolat lanț de insule locuite din lume, Honolulu servește ca un important centru de transport și turism în Pacific.",
         urlTitle: "hawai",
