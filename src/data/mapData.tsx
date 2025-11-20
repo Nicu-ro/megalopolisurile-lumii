@@ -38,7 +38,7 @@ const markers: CustomMarker[] = [
         name: "Megalopolisul Japonez",
         position: { lat: 35.652832, lng: 139.817413 },
         info: "FUN FACT :  Această regiune urmează în mare parte traseul istoric al vechiului drum Tōkaidō din perioada Edo (1603–1868), care lega Edo (actualul Tokyo) de Kyoto și era unul dintre cele mai importante drumuri comerciale și administrative din Japonia feudală.",
-        urlTitle: "Japonia",
+        urlTitle: "japonia",
         canvaPresentations: [
             {
                 url: "https://www.canva.com/design/DAGpUQagaZk/S3mPRZdGdIYHFhwJeYvhug/view?embed",
