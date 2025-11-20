@@ -146,7 +146,7 @@ body {
     gap: 24px;
     background-color: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    margin-top: 30px;
 }
 
 /* -------- BACK BUTTON -------- */
@@ -323,7 +323,7 @@ body {
     }
 }
 
-@media (max-width: 601px) {
+@media (max-width: 631px) {
     .header-title {
         font-size: 1.5rem;
         position: absolute;
@@ -365,5 +365,14 @@ body {
     .logo-image {
         width: 60px !important;
         height: 60px !important;
+    }
+}
+@media (max-width: 345px) {
+    .header-title {
+        font-size: 0.7rem;
+        left: 110px;
+    }
+    .info-text {
+        font-size: 0.5rem;
     }
 }

@@ -87,9 +87,9 @@ const MapContainer: React.FC = () => {
                         position={marker.position}
                         onClick={() => handleMarkerClick(marker)}
                         icon={{
-                            url: "/imgs/map-pin.svg",    // your custom pin
-                            scaledSize: new google.maps.Size(35, 35), // resize nicely
-                            anchor: new google.maps.Point(17, 35),    // so it “sits” on the map
+                            url: "/imgs/map-pin.svg",
+                            scaledSize: new google.maps.Size(35, 35),
+                            anchor: new google.maps.Point(17, 35),
                         }}
                     />
                 ))}
