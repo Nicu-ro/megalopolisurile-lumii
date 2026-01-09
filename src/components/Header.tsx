@@ -25,8 +25,10 @@ export default function Header({ title }: HeaderProps) {
                 <span>Liceul "Traian Vuia" Craiova</span>
                 <span>Clasa: XI-C</span>
                 <span>Specializarea: Matematica-Informatica</span>
-                <span>Profesor: Toma Denisa, Țenea Elena</span>
+                <span>Proiect realizat de Galbinu Nicusor</span>
             </div>
+
+
         </header>
     );
 }
