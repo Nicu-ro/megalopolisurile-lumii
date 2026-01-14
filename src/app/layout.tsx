@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Megalopolisurile Terrei",
   description: "O explorare a celor mai mari și mai influente orașe din lume.",
+  icons: {
+    icon: "./favicon.ico", 
+  },
 };
 
 export default function RootLayout({
