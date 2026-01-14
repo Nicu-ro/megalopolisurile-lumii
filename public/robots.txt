@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://megalopolisurile-terrei.ddnsfree.com/sitemap/sitemap.xml
+Sitemap: https://megalopolisurile-terrei.com/sitemap/sitemap.xml
