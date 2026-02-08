@@ -1,6 +1,9 @@
+
 import Image from "next/image";
 import logoVuia from "../../public/imgs/logo-liceu.png";
 import Link from "next/link";
+import ThemeButton from "./ThemeButton";
+
 
 interface HeaderProps {
     title: string;
@@ -21,12 +24,7 @@ export default function Header({ title }: HeaderProps) {
 
             <h1 className="header-title">{title}</h1>
 
-            <div className="info-text">
-                <span>Liceul "Traian Vuia" Craiova</span>
-                <span>Clasa: XI-C</span>
-                <span>Specializarea: Matematica-Informatica</span>
-                <span>Proiect realizat de Galbinu Nicusor</span>
-            </div>
+        <ThemeButton />
 
 
         </header>

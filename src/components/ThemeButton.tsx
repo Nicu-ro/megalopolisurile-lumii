@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+"use client";
 import { Dispatch, SetStateAction, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { FiMoon, FiSun } from "react-icons/fi";
 
 const TOGGLE_CLASSES =
@@ -11,7 +12,7 @@ const ThemeButton = () => {
   const [selected, setSelected] = useState<ToggleOptionsType>("light");
   const [mounted, setMounted] = useState(false);
 
-  // Set mounted to true ONLY on the client
+ 
   useEffect(() => {
     setMounted(true);
     const savedTheme = localStorage.getItem("theme") as ToggleOptionsType | null;
@@ -33,13 +34,13 @@ const ThemeButton = () => {
   }, [selected, mounted]);
 
   return (
-    /* py-10 adds even more vertical space to ensure it's away from the border */
+  
     <div className="flex items-center justify-center py-10 ml-8" suppressHydrationWarning>
-      {/* We only render the actual toggle if mounted is true to kill the error */}
+     
       {mounted ? (
         <SliderToggle selected={selected} setSelected={setSelected} />
       ) : (
-        /* This invisible box keeps the header from jumping when the button appears */
+       
         <div className="h-[40px] w-[180px]" />
       )}
     </div>

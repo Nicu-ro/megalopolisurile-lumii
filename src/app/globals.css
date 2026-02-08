@@ -20,8 +20,8 @@
 }
 
 .dark {
-    --bg-main: #0f172a; /* Slate 950 */
-    --bg-card: #1e293b; /* Slate 800 */
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
     --bg-header: #1e293b;
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
@@ -36,7 +36,6 @@
     margin: 0;
     padding: 0;
     font-family: "Roboto", sans-serif;
-    /* Smooth transition for theme switching */
     transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease, color var(--transition-speed) ease;
 }
 
@@ -58,25 +57,49 @@ body {
 /* -------- FOOTER -------- */
 .site-footer {
     width: 100%;
-    height: 60px;
+    min-height: 120px;
+    padding: 0 20px;
     background: var(--bg-card);
-    color: var(--accent-blue);
-    text-align: center;
     border-top: 1px solid var(--border-color);
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.04);
     user-select: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
+    
+    /* 3-column grid to force the blue link to the center */
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; 
+    align-items: center;
 }
 
+/* Centered Blue Link (Middle Column) */
 .site-footer a {
+    grid-column: 2; /* Explicitly puts it in the middle */
     color: var(--accent-blue);
     font-size: 1rem;
     font-weight: 500;
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Shinking White Text (Left Column) */
+.info-text {
+    grid-column: 1; /* Explicitly puts it on the left */
+    display: flex;
+    flex-direction: column;
+    gap: 0.35em;
+    /* Responsive sizing: gets very small on mobile */
+    font-size: clamp(0.45rem, 1.3vw, 0.95rem);
+    color: var(--text-main);
+    font-weight: 500;
+    text-align: left;
+    white-space: nowrap;
+}
+
+/* Spacer for Grid Balance (Right Column) */
+.footer-spacer {
+    grid-column: 3;
 }
 
 /* -------- SCROLLBAR -------- */
@@ -120,17 +143,6 @@ body {
     line-height: 1.2;
     text-align: center;
     font-family: "Saira Stencil One" !important;
-}
-
-.info-text {
-    justify-self: end;
-    display: flex;
-    flex-direction: column;
-    gap: 0.35em;
-    font-size: clamp(0.6rem, 2vw, 0.95rem);
-    color: var(--text-main);
-    font-weight: 500;
-    text-align: right;
 }
 
 /* -------- PAGE ROOT -------- */
@@ -219,7 +231,7 @@ body {
     color: var(--text-muted);
 }
 
-/* -------- MOBILE STACKING -------- */
+/* -------- MOBILE OVERRIDES -------- */
 @media (max-width: 480px) {
     .site-header {
         grid-template-columns: 1fr;
@@ -227,9 +239,18 @@ body {
         justify-items: center;
         gap: 12px;
     }
-    .logo-wrapper, .header-center, .info-text {
-        justify-self: left !important;
-        width: 100%;
+    
+    .site-footer {
+        padding: 0 10px;
     }
-    .info-text { text-align: left; }
+
+    /* Shrink left text more for tiny phones */
+    .info-text { 
+        font-size: 6px !important; 
+    }
+
+    /* Shrink centered link slightly */
+    .site-footer a {
+        font-size: 11px;
+    }
 }

@@ -10,8 +10,7 @@ export default function Page() {
         <div className="page-root">
             <Header title="Megalopolisurile Terrei" />
 
-            <ThemeButton />
-
+            
             <div className="map-card">
                 <MapContainer />
             </div>
