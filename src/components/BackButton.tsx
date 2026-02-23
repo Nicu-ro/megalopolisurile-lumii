@@ -13,18 +13,17 @@ export default function BackButton() {
                 backgroundColor: "var(--bg-card)", 
                 color: "var(--header-title)",
                 
-                /* Padding & Spacing */
-                padding: "10px 20px",
-                marginTop: "20px",    /* Added padding/margin at the top */
-                marginBottom: "20px",
+
+                padding: "9px 20px",
+                marginTop: "20px",   
                 
-                /* Styling */
+            
                 borderRadius: "6px",
                 border: "1px solid var(--border-color)", 
                 cursor: "pointer",
                 fontWeight: "600",
                 
-                /* Smooth theme switching */
+              
                 transition: "all var(--transition-speed) ease", 
             }}
         >
