@@ -1,3 +1,5 @@
+"use client";
+import React, { useState, useMemo } from "react";
 import markers, { CustomMarker } from "@/data/mapData";
 import { useRouter } from "next/navigation";
 import "@/app/globals.css";
@@ -10,8 +12,9 @@ import {
 
 const MapContainer: React.FC = () => {
     const router = useRouter();
+    
+    const [activeFilter, setActiveFilter] = useState<'all' | 'megalopolis' | 'climate'>('all');
 
-    // ---- GOOGLE MAP LOADER ----
     const { isLoaded } = useJsApiLoader({
         id: "google-map-script",
         language: "ro",
@@ -19,25 +22,43 @@ const MapContainer: React.FC = () => {
         googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
     });
 
-    // 2. RETURN AFTER ALL HOOKS
+    const filteredMarkers = useMemo(() => {
+        if (activeFilter === 'all') return markers;
+        return markers.filter((m: any) => m.type === activeFilter);
+    }, [activeFilter]);
+
     if (!isLoaded) return (
         <div className="map-container-loading">
-            <span>
-                Loading map...
-            </span>
+            <span>Se încarcă harta...</span>
         </div>
     );
 
-    // ---- MARKER CLICK ----
     const handleMarkerClick = (marker: CustomMarker) => {
         router.replace(`/${marker.urlTitle}`);
     };
 
     return (
-        <div>
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+            
+            
+            <div className="filter-overlay">
+                <button 
+                    className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`} 
+                    onClick={() => setActiveFilter('all')}
+                >Toate</button>
+                <button 
+                    className={`filter-btn ${activeFilter === 'megalopolis' ? 'active' : ''}`} 
+                    onClick={() => setActiveFilter('megalopolis')}
+                >Megalopolisuri</button>
+                <button 
+                    className={`filter-btn ${activeFilter === 'climate' ? 'active' : ''}`} 
+                    onClick={() => setActiveFilter('climate')}
+                >Tipuri de medii</button>
+            </div>
+
             <GoogleMap
                 zoom={3}
-                center={{ lat: 44.4268, lng: 26.1025 }}
+                center={{ lat: 20, lng: 0 }}
                 mapContainerStyle={{
                     height: "calc(100dvh - 60px - 124px - 40px)",
                     width: "100%",
@@ -48,49 +69,23 @@ const MapContainer: React.FC = () => {
                     zoomControl: true,
                     fullscreenControl: false,
                     streetViewControl: true,
-                    mapTypeControl: true,
+                    mapTypeControl: false,
                     gestureHandling: "greedy",
                     scrollwheel: true,
                     minZoom: 2,
                     backgroundColor: "#000000",
-                    restriction: {
-                        latLngBounds: {
-                            north: 85,    // maximum latitude
-                            south: -85,   // minimum latitude
-                            west: -180,
-                            east: 180,
-                        },
-                        strictBounds: false, // if true, user cannot move outside
-                    }, 
-                    styles: [
-                        {
-                            featureType: "poi",
-                            elementType: "labels",
-                            stylers: [{ visibility: "off" }],
-                        },
-                        {
-                            featureType: "administrative.land_parcel",
-                            elementType: "labels",
-                            stylers: [{ visibility: "off" }],
-                        },
-                        {
-                            featureType: "road",
-                            elementType: "labels",
-                            stylers: [{ saturation: -20 }, { lightness: 10 }],
-                        },
-                    ],
                 }}
             >
-                {markers.map((marker) => (
+                {filteredMarkers.map((marker) => (
                     <Marker
                         key={marker.id}
                         position={marker.position}
                         onClick={() => handleMarkerClick(marker)}
-                        icon={{
-                            url: "/imgs/map-pin.svg",
-                            scaledSize: new google.maps.Size(35, 35),
-                            anchor: new google.maps.Point(17, 35),
-                        }}
+                        icon={
+                            marker.type === 'megalopolis'
+                                ? "http://maps.google.com/mapfiles/ms/icons/blue-dot.png" 
+                                : "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                        }
                     />
                 ))}
             </GoogleMap>

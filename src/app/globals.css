@@ -254,3 +254,52 @@ body {
         font-size: 11px;
     }
 }
+/* -------- TRANSPARENT FILTER BUTTONS -------- */
+
+.filter-overlay {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    gap: 12px;
+    /* Transparent glass effect */
+    background: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.filter-btn {
+    padding: 6px 16px;
+    border-radius: 40px;
+    border: 1px solid transparent;
+    background: transparent;
+    /* Using your theme's blue */
+    color: var(--header-title); 
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background: rgba(47, 121, 183, 0.1);
+}
+
+.filter-btn.active {
+    /* Solid blue for the active state */
+    background: var(--header-title);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(47, 121, 183, 0.3);
+}
+
+/* Ensure the Map Card container allows absolute positioning */
+.map-card {
+    position: relative !important;
+}
