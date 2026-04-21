@@ -168,7 +168,7 @@ const markers: CustomMarker[] = [
         info: "FUN FACT: Deșertul Sahara, cel mai mare deșert cald din lume, acoperă aproximativ 9 milioane de kilometri pătrați și este aproape la fel de mare ca întreaga Statele Unite ale Americii.",
         urlTitle: "climat-desertic",
         canvaPresentations: [
-            { url: "https://www.canva.com/design/DAHAYCYlrOg/qylpDJnLMTt_-Jvy2fiVQQ/view?embed", title: "desertic-1" }
+            { url: "https://www.canva.com/design/DAHHeMIUEC0/Nc2yPg7fESu2LAwIW9x85A/view?embed", title: "desertic-1" }
         ]
     },
 ];
